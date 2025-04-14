@@ -64,11 +64,54 @@ section {
     margin: 1px;
 }
 
+.education-section {
+    padding: 60px 10vw;
+}
+
+.edu-card {
+    background-color: #F4D8CD;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.edu-card img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.edu-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.edu-text h3 {
+    margin: 10px 0 5px 0;
+    font-size: 1.6rem;
+    color: #123458;
+}
+
+.edu-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 .textblock h2 {
     font-size: 8vw;
     margin-top: 0;
 
     background-color: #d4bebe;
+}
+
+h2{
+    font-size: 3vw;
+    margin-top: 0%;
 }
 
 .textblock p {
@@ -79,28 +122,75 @@ section {
     margin: 15vw;
 }
 
-.skillgrid {
+.skills-section {
+    padding: 50px 200px;
+}
+
+.skills-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.flex2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.skill-card {
     background-color: #F4D8CD;
-    max-height: 4vw;
-    margin: 100px auto;
-    padding: 10px 20px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.flex2 img {
-    width: 15vw;
-} 
 
-.flex2 h2 {
-    padding: 0px 20px;
-    font-size: 4vw;
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.skill-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+
+.badge.beginner {
+    background-color: #4CAF50;
+}
+
+.badge.intermediate {
+    background-color: #ffd11a;
+    color: #333;
+}
+
+.badge.expert {
+    background-color: #ff944d;
+}
+
 
 .container {
     margin: 10px auto; 

@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="scripts/usage_data.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <a href="#overview">Overview</a>
-            <a href="#early-life">Early Life</a>
+            <a href="#origins">Origins</a>
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+            <a href="text_analyser" target="_blank">Magic</a>
         </nav>
     </header>
     
@@ -36,98 +38,101 @@
         </div>
     </section>
 
-    <hr id="early-life">
+    <hr id="origins">
 
     <section>
+        <h2>Origins</h2>
+        <p>
+            I was born in the district of Kottayam in Kerala to Gilu Alex and Julie Gilu. 
+            Kottayam is a district famous for its lush vegetation, calm backwaters and friendly people.
+        </p>
         <div class="toflex">
             <img src="assets/k1.png" alt="k1">
             <img src="assets/k2.png" alt="k2">
             <img src="assets/k3.png" alt="k3">
         </div>
-        <p>
-            I was born in the district of Kottayam in Kerala to Gilu Alex and Julie Gilu.
-        </p>
     </section>
 
     <hr id="education">
 
-    <section>
-        <div class="toflex">
-            <img src="assets/iiit.jpg" alt="iiit" style="width: 30vw;">
-        <div class="textblock">
-            <ul>
-                <li>
-                    I completed class 10 and 12 from Rajagiri Christu Jayanthi Public School, Kochi.
-                </li>
-                <br>
-                <li>
-                    Currently pursuing undergraduate studies in Computer Science, with a focus on Computational Natural Science in 
-                    IIIT Hyderabad.
-                </li>
-            </ul>
-        </div>
+    <hr id="education">
+
+    <section class="education-section">
+        <h2 style="text-align: center; font-size: 3vw;">Education</h2>
+        <div class="edu-card">
+            <img src="assets/iiit.jpg" alt="IIIT Hyderabad">
+            <div class="edu-text">
+                <h3>Rajagiri Christu Jayanthi Public School, Kochi</h3>
+                <p>Completed Class 10 and 12 with a strong academic foundation and diverse interests.</p>
+                
+                <h3>IIIT Hyderabad</h3>
+                <p>
+                    Currently pursuing B.Tech in Computer Science with a focus on Computational Natural Sciences.
+                    Passionate about interdisciplinary research and hands-on projects.
+                </p>
+
+                <h3>Achievements</h3>
+                <p>
+                    I am good at both sports and arts. I won multiple medals including an individual championship
+                    for athletics at the school level. I have also participated in a hackathon in College and made a game in C.
+                </p>
+            </div>
         </div>
     </section>
 
     <hr id="skills">
 
-    <section>
-        <div class="container">
-            <div class="flex2">
+    <section class="skills-section">
+        <h2 style="margin-left: 2vw;">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="assets/c.png" alt="C">
                 <h2>C</h2>
-                <img src="assets/c.png" alt="c">
+                <span class="badge expert">Expert</span>
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="flex2">
-                <img src="assets/c++.png" alt="c++">
+    
+            <div class="skill-card">
+                <img src="assets/c++.png" alt="C++">
                 <h2>C++</h2>
+                <span class="badge beginner">Beginner</span>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="flex2">
+    
+            <div class="skill-card">
+                <img src="assets/html.png" alt="HTML">
                 <h2>HTML</h2>
-                <img src="assets/html.png" alt="html" style="width: 20vw;">
+                <span class="badge intermediate">Intermediate</span>
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="flex2">
-                <img src="assets/css.png" alt="css">
+    
+            <div class="skill-card">
+                <img src="assets/css.png" alt="CSS">
                 <h2>CSS</h2>
+                <span class="badge beginner">Beginner</span>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="flex2">
+    
+            <div class="skill-card">
+                <img src="assets/js.png" alt="JavaScript">
                 <h2>JavaScript</h2>
-                <img src="assets/js.png" alt="js">
+                <span class="badge beginner">Beginner</span>
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="flex2">
-                <img src="assets/python.png" alt="python" style="width: 20vw; padding-top: 15px;">
+    
+            <div class="skill-card">
+                <img src="assets/python.png" alt="Python">
                 <h2>Python</h2>
+                <span class="badge intermediate">Intermediate</span>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="flex2">
+    
+            <div class="skill-card">
+                <img src="assets/mysql.png" alt="MySQL">
                 <h2>MySQL</h2>
-                <img src="assets/mysql.png" alt="mysql" style="width: 25vw; padding-bottom: 25px">
+                <span class="badge intermediate">Intermediate</span>
+            </div>
+    
+            <div class="skill-card">
+                <img src="assets/mongodb.png" alt="MongoDB">
+                <h2>MongoDB</h2>
+                <span class="badge beginner">Beginner</span>
             </div>
         </div>
-        
-        <div class="container">
-            <div class="flex2">
-                <img src="assets/mongodb.png" alt="mongodb" style="width: 30vw; padding-bottom: 20px;">
-                <h2>mongoDB</h2>
-            </div>
-        </div>
-
     </section>
 
     <footer id="contact">
@@ -136,7 +141,7 @@
             <p>Email: <a href="mailto:leongiluk@gmail.com" target="_blank">leongiluk@gmail.com</a></p>
             <p>Phone: <a href="tel:+919746237925 ">+91 9746237925</a></p>
             <p>GitHub: <a href="https://github.com/leonidasgilusius" target="_blank">github.com/leonidasgilusius</a></p>
-            <p>CV: <a href="assets/pfp.jpg" target="_blank">Click here</a></p>
+            <p>CV: <a href="assets/cv.pdf" target="_blank">Click here</a></p>
         </div>
     </footer>
 
