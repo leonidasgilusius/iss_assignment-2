@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #F1EFEC;
     margin: 0;
@@ -30,5 +34,106 @@ nav a:hover {
 h1 {
     font-size: 12vw;
     margin-left: 20px;
+    margin-bottom: 144px;
 }
 
+hr {
+    height: 2px;
+    background-color: brown;
+}
+
+p, ul {
+    font-size: 20px;
+}
+
+section {
+    margin: 50px 20px;
+}
+
+.toflex {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toflex img {
+    width: 21vw;
+    padding: 5vw 5vw;
+    background-color: #123458;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.textblock h2 {
+    font-size: 8vw;
+    margin-top: 0;
+
+    background-color: #d4bebe;
+}
+
+.textblock p {
+    margin-right: 15vw;
+}
+
+.textblock ul {
+    margin: 15vw;
+}
+
+.skillgrid {
+    display: grid;
+}
+
+.flex2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #F4D8CD;
+    max-height: 4vw;
+    margin: 100px auto;
+    padding: 10px 20px;
+}
+
+.flex2 img {
+    width: 15vw;
+} 
+
+.flex2 h2 {
+    padding: 0px 20px;
+    font-size: 4vw;
+}
+
+.container {
+    margin: 10px auto; 
+    padding: 10px;
+}
+
+#contact {
+    background-color: brown;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#contact .footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+#contact p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+#contact a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
