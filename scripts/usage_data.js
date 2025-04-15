@@ -3,5 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("click", function(event) {
-    console.log(new Date().toLocaleTimeString(), ", click, ", event.target.tagName);
+    const tag = event.target.tagName;
+    const id = event.target.id ? `#${event.target.id}` : '';
+    const classes = event.target.className ? `.${event.target.className.toString().replace(/\s+/g, '.')}` : '';
+    
+    console.log(new Date().toLocaleTimeString(), ", click, ", tag + id + classes);
 });
+
