@@ -261,3 +261,99 @@ h2{
 #contact a:hover {
     text-decoration: underline;
 }
+
+/* Responsive Styles for Mobile Devices */
+@media (max-width: 900px) {
+    .skills-section {
+        padding: 30px 5vw;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .skill-card {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
+    }
+    .education-section {
+        padding: 40px 3vw;
+    }
+    .edu-card {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    .edu-card img {
+        width: 100%;
+        max-width: 250px;
+    }
+    .textblock ul {
+        margin: 5vw;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 10px 2vw;
+    }
+    nav a {
+        margin: 5px 0;
+        padding: 8px 12px;
+        font-size: 1rem;
+        display: block;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-left: 10px;
+        margin-bottom: 40px;
+    }
+    h2, .textblock h2 {
+        font-size: 2rem;
+    }
+    section {
+        margin: 30px 5vw;
+    }
+    .toflex, .flexing {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .toflex img, .hover-container img {
+        width: 90vw;
+        padding: 4vw 0;
+        margin: 10px 0;
+    }
+    .hover-container {
+        margin-bottom: 10vw;
+        margin-right: 0;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .skill-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+    .edu-card img {
+        width: 100%;
+        max-width: 200px;
+    }
+    .container {
+        padding: 5px;
+    }
+    #contact {
+        padding: 15px 2vw;
+    }
+    #contact h2 {
+        font-size: 1.2rem;
+    }
+    #contact p {
+        font-size: 0.95rem;
+    }
+}
