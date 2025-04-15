@@ -16,7 +16,7 @@ header {
     justify-content: flex-end;
 }
 
-nav a {
+nav a, .navigation {
     text-decoration: none;
     margin: 10px;
     padding: 8px;
@@ -27,7 +27,7 @@ nav a {
     letter-spacing: 1px;
     border-radius: 5px;
 }
-nav a:hover {
+nav a:hover, .navigation:hover {
     background-color: #030303;
 }
 
@@ -262,7 +262,7 @@ h2{
     text-decoration: underline;
 }
 
-/* Responsive Styles for Mobile Devices */
+
 @media (max-width: 900px) {
     .skills-section {
         padding: 30px 5vw;
@@ -354,15 +354,14 @@ h2{
         font-size: 0.95rem;
     }
     .hover-container {
-        position: static; /* Remove relative positioning */
+        position: static;
         display: block;
         width: 100%;
         margin: 20px 0 40px 0;
         height: auto;
     }
-    
     .hover-container img {
-        position: static; /* Remove absolute positioning */
+        position: static;
         display: block;
         width: 80%;
         height: auto;
@@ -370,18 +369,5 @@ h2{
         margin: 10px auto;
         border-radius: 10px;
         background-color: #123458;
-    }
-    
-    /* Change hover behavior for mobile */
-    .hover-container img.hover-on {
-        display: none; /* Initially hide the hover-on image */
-    }
-    
-    .hover-container:active img.hover-on {
-        display: block; /* Show on tap/active instead of hover */
-    }
-    
-    .hover-container:active img.hover-off {
-        display: none; /* Hide the original on tap/active */
     }
 }
