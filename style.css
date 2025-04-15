@@ -354,29 +354,34 @@ h2{
         font-size: 0.95rem;
     }
     .hover-container {
-        position: relative;
+        position: static; /* Remove relative positioning */
+        display: block;
         width: 100%;
-        height: 80vw; /* Explicit height to contain the image */
-        margin: 0 0 90vw 0; /* Add space below */
-        padding: 0;
+        margin: 20px 0 40px 0;
+        height: auto;
     }
     
     .hover-container img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 80vw; /* Slightly smaller than container */
+        position: static; /* Remove absolute positioning */
+        display: block;
+        width: 80%;
         height: auto;
         padding: 4vw;
-        margin: 0;
-        transform: none; /* Remove any transforms */
+        margin: 10px auto;
+        border-radius: 10px;
+        background-color: #123458;
     }
     
-    /* Make sure both images stack properly */
-    .hover-container img.hover-on,
-    .hover-container img.hover-off {
-        position: absolute;
-        top: 0;
-        left: 0;
+    /* Change hover behavior for mobile */
+    .hover-container img.hover-on {
+        display: none; /* Initially hide the hover-on image */
+    }
+    
+    .hover-container:active img.hover-on {
+        display: block; /* Show on tap/active instead of hover */
+    }
+    
+    .hover-container:active img.hover-off {
+        display: none; /* Hide the original on tap/active */
     }
 }
