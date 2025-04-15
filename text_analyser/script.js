@@ -10,12 +10,10 @@ function analyzeText() {
     else if (/[^a-zA-Z0-9\s]/.test(char)) specialSymbols++;
   }
 
-  // Fix word splitting: treat punctuation as word separators (but keep apostrophes)
   const cleanText = text.replace(/[^\w'\n]+/g, ' ');
   const wordsArray = cleanText.trim().split(/\s+/).filter(Boolean);
   const words = wordsArray.length;
 
-  // For token analysis: normalize to lowercase and strip non-alpha characters (except apostrophes)
   const tokens = wordsArray.map(t => t.toLowerCase().replace(/[^a-z']/g, ''));
 
   const countTokens = (tokenList) => {
