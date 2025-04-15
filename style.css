@@ -292,9 +292,6 @@ h2{
     .textblock ul {
         margin: 5vw;
     }
-}
-
-@media (max-width: 600px) {
     header {
         flex-direction: column;
         align-items: flex-end;
@@ -355,5 +352,21 @@ h2{
     }
     #contact p {
         font-size: 0.95rem;
+    }
+    .hover-container {
+        width: 100%;
+        min-height: 60vw; /* or adjust as needed */
+        margin-bottom: 10vw;
+        margin-right: 0;
+    }
+    .hover-container img {
+        width: 90vw;
+        max-width: 100%;
+        padding: 4vw 0;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        position: absolute;
+        margin: 0;
     }
 }
