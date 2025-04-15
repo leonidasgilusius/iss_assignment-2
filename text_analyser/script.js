@@ -1,78 +1,85 @@
 function analyzeText() {
-    let text = document.getElementById("Text").value;
-    
-    let letters = (text.match(/[a-zA-Z]/g) || []).length;
-    
-    let words = text.trim().split(/\s+/).filter(Boolean).length;
-    
-    let spaces = (text.match(/ /g) || []).length;
-    
-    let newlines = (text.match(/\n/g) || []).length;
-    
-    let specialSymbols = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
-    
-    let output = "";
-    output += "<h2>General Statistics</h2>";
-    output += "<p>Letters: " + letters + "</p>";
-    output += "<p>Words: " + words + "</p>";
-    output += "<p>Spaces: " + spaces + "</p>";
-    output += "<p>Newlines: " + newlines + "</p>";
-    output += "<p>Special Symbols: " + specialSymbols + "</p>";
+  const text = document.getElementById("Text").value;
 
-    let tokens = text.split(/\s+/).map(token => token.toLowerCase().replace(/[^a-z]/g, ''));
-    
-    let pronounsList = ["i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them"];
-    let pronounCounts = {};
-    let totalpronounCount = 0;
-    pronounsList.forEach(p => pronounCounts[p] = 0);
-    tokens.forEach(token => {
-      if(pronounCounts.hasOwnProperty(token)) {
-        pronounCounts[token]++;
-        totalpronounCount++;
-      }
-    });
-    output += "<h2>Pronoun Counts</h2>";
-    output += "<h3>" + "Total: " + totalpronounCount + "</h3>";
-    for (let p in pronounCounts) {
-      output += "<p>" + p + ": " + pronounCounts[p] + "</p>";
-    }
+  let letters = 0, spaces = 0, newlines = 0, specialSymbols = 0;
 
-    let prepositionsList = [
-      "about", "above", "across", "after", "against", "along", "among", "around",
-      "at", "before", "behind", "below", "beneath", "beside", "between", "beyond",
-      "by", "despite", "down", "during", "except", "for", "from", "in", "inside",
-      "into", "like", "near", "of", "off", "on", "onto", "out", "outside", "over",
-      "past", "since", "through", "throughout", "to", "toward", "under", "underneath",
-      "until", "up", "upon", "with", "within", "without"
-    ];
-    let prepositionCounts = {};
-    let totalprepositionCount = 0;
-    prepositionsList.forEach(p => prepositionCounts[p] = 0);
-    tokens.forEach(token => {
-      if(prepositionCounts.hasOwnProperty(token)) {
-        prepositionCounts[token]++;
-        totalprepositionCount++;
-      }
-    });
-    output += "<h2>Preposition Counts</h2>";
-    output += "<h3>" + "Total: " + totalprepositionCount + "</h3>";
-    for (let p in prepositionCounts) {
-      output += "<p>" + p + ": " + prepositionCounts[p] + "</p>";
-    }
-    
-    let articleCounts = {"a": 0, "an": 0};
-    let totalarticleCount = 0;
-    tokens.forEach(token => {
-      if(articleCounts.hasOwnProperty(token)) {
-        articleCounts[token]++;
-        totalarticleCount++;
-      }
-    });
-    output += "<h2>Indefinite Articles Counts</h2>";
-    output += "<h3>" + "Total: " + totalarticleCount + "</h3>";
-    for (let art in articleCounts) {
-      output += "<p>" + art + ": " + articleCounts[art] + "</p>";
-    }
-    
-    document.getElementById("analysisOutput").innerHTML = output;
+  for (let char of text) {
+    if (/[a-zA-Z]/.test(char)) letters++;
+    else if (char === ' ') spaces++;
+    else if (char === '\n') newlines++;
+    else if (/[^a-zA-Z0-9\s]/.test(char)) specialSymbols++;
   }
+
+  // Fix word splitting: treat punctuation as word separators (but keep apostrophes)
+  const cleanText = text.replace(/[^\w'\n]+/g, ' ');
+  const wordsArray = cleanText.trim().split(/\s+/).filter(Boolean);
+  const words = wordsArray.length;
+
+  // For token analysis: normalize to lowercase and strip non-alpha characters (except apostrophes)
+  const tokens = wordsArray.map(t => t.toLowerCase().replace(/[^a-z']/g, ''));
+
+  const countTokens = (tokenList) => {
+    const counts = {};
+    let total = 0;
+    tokenList.forEach(t => counts[t] = 0);
+    for (let token of tokens) {
+      if (counts.hasOwnProperty(token)) {
+        counts[token]++;
+        total++;
+      }
+    }
+    return { counts, total };
+  };
+
+  const pronouns = ["i", "you", "he", "she", "it", "we", "they", "me", "him", "her", "us", "them"];
+  const prepositions = [
+    "about", "above", "across", "after", "against", "along", "among", "around",
+    "at", "before", "behind", "below", "beneath", "beside", "between", "beyond",
+    "by", "despite", "down", "during", "except", "for", "from", "in", "inside",
+    "into", "like", "near", "of", "off", "on", "onto", "out", "outside", "over",
+    "past", "since", "through", "throughout", "to", "toward", "under", "underneath",
+    "until", "up", "upon", "with", "within", "without"
+  ];
+  const articles = ["a", "an"];
+
+  const { counts: pronounCounts, total: pronounTotal } = countTokens(pronouns);
+  const { counts: prepositionCounts, total: prepositionTotal } = countTokens(prepositions);
+  const { counts: articleCounts, total: articleTotal } = countTokens(articles);
+
+  const createStatsSection = (title, total, counts) => {
+    let section = `<h2>${title}</h2><h3>Total: ${total}</h3>`;
+    for (let key in counts) {
+      if (counts[key] > 0) {
+        section += `<p>${key}: ${counts[key]}</p>`;
+      }
+    }
+    return section;
+  };
+
+  const output = `
+    <h2>General Statistics</h2>
+    <p>Letters: ${letters}</p>
+    <p>Words: ${words}</p>
+    <p>Spaces: ${spaces}</p>
+    <p>Newlines: ${newlines}</p>
+    <p>Special Symbols: ${specialSymbols}</p>
+    ${createStatsSection("Pronoun Counts", pronounTotal, pronounCounts)}
+    ${createStatsSection("Preposition Counts", prepositionTotal, prepositionCounts)}
+    ${createStatsSection("Indefinite Articles Counts", articleTotal, articleCounts)}
+  `;
+
+  document.getElementById("analysisOutput").innerHTML = output;
+
+  document.getElementById("analysisOutput").insertAdjacentHTML('beforebegin', '<div id="tempMessage">Done!</div>');
+
+  setTimeout(() => {
+    document.getElementById("tempMessage").remove();
+  }, 2000);
+  
+  tempMessage.style.padding = "10px";
+  tempMessage.style.backgroundColor = "#4CAF50";
+  tempMessage.style.color = "white";
+  tempMessage.style.marginTop = "10px";
+  tempMessage.style.textAlign = "center";
+  tempMessage.style.fontWeight = "bold";
+}

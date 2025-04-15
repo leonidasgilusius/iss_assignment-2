@@ -50,18 +50,56 @@ section {
     margin: 50px 20px;
 }
 
-.toflex {
+.toflex, .flexing{
     display:flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .toflex img {
+    width: 25vw;
+    padding: 3vw 3vw;
+    background-color: #123458;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+.textblock h2 {
+    font-size: 8vw;
+    margin-top: 0;
+
+    background-color: #d4bebe;
+}
+
+.hover-container {
+    position: relative;
+    margin-bottom: 50vw;
+    margin-right: 40vw;
+}
+
+.hover-container img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 5s ease;
     width: 21vw;
     padding: 5vw 5vw;
     background-color: #123458;
     border-radius: 10px;
     margin: 1px;
+}
+
+.hover-container img.hover-on {
+    opacity:0;
+}
+
+.hover-container:hover img.hover-on {
+    opacity:1;
+}
+
+.hover-container:hover img.hover-off {
+    opacity:0;
 }
 
 .education-section {
@@ -102,13 +140,6 @@ section {
     margin-bottom: 20px;
 }
 
-.textblock h2 {
-    font-size: 8vw;
-    margin-top: 0;
-
-    background-color: #d4bebe;
-}
-
 h2{
     font-size: 3vw;
     margin-top: 0%;
@@ -128,10 +159,11 @@ h2{
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
+    justify-content: start;
 }
 
 .skill-card {
@@ -146,6 +178,8 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 250px;
+    height: 170px
 }
 
 

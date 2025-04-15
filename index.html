@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Website</title>
     <link rel="stylesheet" href="style.css">
     <script src="scripts/usage_data.js"></script>
 </head>
@@ -11,8 +11,8 @@
     <header>
         <nav>
             <a href="#overview">Overview</a>
-            <a href="#origins">Origins</a>
             <a href="#education">Education</a>
+            <a href="#origins">Origins</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
             <a href="text_analyser" target="_blank">Magic</a>
@@ -26,7 +26,7 @@
     <hr id="overview">
 
     <section>
-        <div class="toflex">
+        <div class="flexing">
             <div class="textblock">
                 <h2>Hi!</h2>
                 <p>
@@ -34,22 +34,10 @@
                     photography. I like exploring new ideas and fields, tampering with tech and making stuff around me aesthetically pleasing. My dream is to in some way contribute something revolutionary to this world.
                 </p>
             </div>
-            <img src="assets/pfp.jpg" alt="pfp" style="width: 30vw;">
-        </div>
-    </section>
-
-    <hr id="origins">
-
-    <section>
-        <h2>Origins</h2>
-        <p>
-            I was born in the district of Kottayam in Kerala to Gilu Alex and Julie Gilu. 
-            Kottayam is a district famous for its lush vegetation, calm backwaters and friendly people.
-        </p>
-        <div class="toflex">
-            <img src="assets/k1.png" alt="k1">
-            <img src="assets/k2.png" alt="k2">
-            <img src="assets/k3.png" alt="k3">
+            <div class="hover-container">
+                <img src="assets/pfp.jpeg" alt="pfp" style="width: 30vw;" class="hover-off">
+                <img src="assets/cr7.jpg" alt="cr7" style="width: 30vw;" class="hover-on">
+            </div>
         </div>
     </section>
 
@@ -71,17 +59,36 @@
 
                 <h3>Achievements</h3>
                 <p>
-                    I am good at both sports and arts. I won multiple medals including an individual championship
-                    for athletics at the school level. I have also participated in a hackathon in College and made a game in C.
+                    I won multiple medals including an individual championship for athletics at the school level.
+                    I am good at sports and arts. I use Arch btw. I am always on the bleeding edge of brainrot and I have shared multiple memes
+                    to my friend before it became mainstream. I have also participated in a hackathon in College and made a game in C.
                 </p>
             </div>
         </div>
     </section>
 
+    <hr id="origins">
+
+    <section>
+        <h2>Origins</h2>
+        <p>
+            I was born in the district of Kottayam in Kerala to Gilu Alex and Julie Gilu. 
+            Kottayam is a district famous for its lush vegetation, calm backwaters and friendly people.
+        </p>
+        <div class="toflex">
+            <img src="assets/k1.jpg" alt="k1">
+            <img src="assets/k2.jpg" alt="k2">
+            <img src="assets/k3.jpg" alt="k3">
+        </div>
+    </section>
+
+    
+
     <hr id="skills">
 
     <section class="skills-section">
         <h2 style="margin-left: 2vw;">Skills</h2>
+        <h3 style="margin-left: 2vw;">Coding</h3>
         <div class="skills-grid">
             <div class="skill-card">
                 <img src="assets/c.png" alt="C">
@@ -104,7 +111,7 @@
             <div class="skill-card">
                 <img src="assets/css.png" alt="CSS">
                 <h2>CSS</h2>
-                <span class="badge beginner">Beginner</span>
+                <span class="badge intermediate">Intermediate</span>
             </div>
     
             <div class="skill-card">
@@ -118,25 +125,54 @@
                 <h2>Python</h2>
                 <span class="badge intermediate">Intermediate</span>
             </div>
-    
+        </div>
+
+        <br>
+
+        <h3 style="margin-left: 2vw;">Database Management</h3>
+        <div class="skills-grid">
             <div class="skill-card">
-                <img src="assets/mysql.png" alt="MySQL">
+                <img src="assets/mysql.png" alt="MySQL" style="width: 10vw;">
                 <h2>MySQL</h2>
                 <span class="badge intermediate">Intermediate</span>
             </div>
     
             <div class="skill-card">
-                <img src="assets/mongodb.png" alt="MongoDB">
+                <img src="assets/mongodb.png" alt="MongoDB" style="width: 10vw;">
                 <h2>MongoDB</h2>
                 <span class="badge beginner">Beginner</span>
             </div>
         </div>
+
+        <br>
+
+        <h3 style="margin-left: 2vw;">Computational Natural Science</h3>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="assets/vmd.svg" alt="vmd" style="width: 8vw;">
+                <h2>VMD</h2>
+                <span class="badge beginner">Beginner</span>
+            </div>
+    
+            <div class="skill-card">
+                <img src="assets/namd.png" alt="namd" style="width: 15vw;">
+                <h2>Namd</h2>
+                <span class="badge beginner">Beginner</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="assets/gaussian.png" alt="gaussian">
+                <h2>Gaussian</h2>
+                <span class="badge beginner">Beginner</span>
+            </div>
+        </div>
+
     </section>
 
     <footer id="contact">
         <div class="footer-container">
             <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:leongiluk@gmail.com" target="_blank">leongiluk@gmail.com</a></p>
+            <p>Email: <a href="mailto:leongiluk@gmail.com">leongiluk@gmail.com</a></p>
             <p>Phone: <a href="tel:+919746237925 ">+91 9746237925</a></p>
             <p>GitHub: <a href="https://github.com/leonidasgilusius" target="_blank">github.com/leonidasgilusius</a></p>
             <p>CV: <a href="assets/cv.pdf" target="_blank">Click here</a></p>

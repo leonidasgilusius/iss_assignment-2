@@ -46,7 +46,8 @@ body {
   }
 
   button:hover {
-    background-color: #0a2a4d;
+    background-color: #5aaaff;
+    color: #333;
   }
 
   #analysisOutput {
