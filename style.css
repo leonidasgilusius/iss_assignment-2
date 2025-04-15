@@ -354,19 +354,29 @@ h2{
         font-size: 0.95rem;
     }
     .hover-container {
+        position: relative;
         width: 100%;
-        min-height: 60vw; /* or adjust as needed */
-        margin-bottom: 10vw;
-        margin-right: 0;
+        height: 80vw; /* Explicit height to contain the image */
+        margin: 0 0 90vw 0; /* Add space below */
+        padding: 0;
     }
+    
     .hover-container img {
-        width: 90vw;
-        max-width: 100%;
-        padding: 4vw 0;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 80vw; /* Slightly smaller than container */
+        height: auto;
+        padding: 4vw;
         margin: 0;
+        transform: none; /* Remove any transforms */
+    }
+    
+    /* Make sure both images stack properly */
+    .hover-container img.hover-on,
+    .hover-container img.hover-off {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
