@@ -388,10 +388,10 @@ h2{
     .hover-container img.hover-on {
         display: none;
     }
-    .hover-container:active img.hover-on {
+    .hover-container:hover img.hover-on {
         display: none;
     }
-    .hover-container:active img.hover-off {
+    .hover-container:hover img.hover-off {
         display: block;
     }
     .social-icons a {
