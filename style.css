@@ -262,6 +262,21 @@ h2{
     text-decoration: underline;
 }
 
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: #FFD700;
+}
+
+.social-icons a:hover {
+    color: white !important;
+}
+
 
 @media (max-width: 900px) {
     .skills-section {
@@ -369,5 +384,18 @@ h2{
         margin: 10px auto;
         border-radius: 10px;
         background-color: #123458;
+    }
+    .hover-container img.hover-on {
+        display: none;
+    }
+    .hover-container:active img.hover-on {
+        display: none;
+    }
+    .hover-container:active img.hover-off {
+        display: block;
+    }
+    .social-icons a {
+        font-size: 20px;
+        margin: 0 8px;
     }
 }
